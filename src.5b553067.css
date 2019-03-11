@@ -1,0 +1,1 @@
+.colors-app{display:flex;height:100%}.color-selector{flex-grow:1}.color-selector.animated{animation:grow .2s ease 0s 1 forwards}@keyframes grow{0%{flex-grow:0}to{flex-grow:1}}
