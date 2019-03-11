@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ColorSelector renders correctly 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#000000",
+    }
+  }
+/>
+`;

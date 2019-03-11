@@ -1,0 +1,14 @@
+.color-selector {
+  flex-grow: 1;
+}
+.color-selector.animated {
+  animation: grow 200ms ease 0s 1 forwards;
+}
+@keyframes grow {
+  0% {
+    flex-grow: 0;
+  }
+  100% {
+    flex-grow: 1;
+  }
+}
