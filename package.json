@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel src/index.html",
-    "build": "parcel build src/index.html",
+    "build": "parcel build src/index.html --public-url .",
     "watch": "parcel watch src/index.html",
     "test": "jest"
   },
@@ -13,6 +13,7 @@
   "author": "carlos gonzález <cgrs@cgrs.me>",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.3.4",
     "@babel/preset-env": "^7.3.4",
     "@babel/preset-react": "^7.0.0",
     "babel-jest": "^24.4.0",
