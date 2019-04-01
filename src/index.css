@@ -5,10 +5,5 @@ html, body {
 body {
   margin: 0;
   padding: 0;
-  height: 200%;
-}
-
-#root {
-  width: 100%;
   height: 100%;
 }

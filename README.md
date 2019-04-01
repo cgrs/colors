@@ -1,5 +1,5 @@
 # ```colors-app```
-[Colordot](https://color.hailpixel.com) by [hailpixel](https://github.com/devinhunt) ported to React.
+[Colordot](https://color.hailpixel.com) by [hailpixel](https://github.com/devinhunt) ported to ~~React~~ `lit-element`.
 
 This is still a work in progress, there are some functionalities pending:
 - [x] Create a color swatch using the mouse position
