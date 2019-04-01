@@ -13,6 +13,21 @@ exports[`ColorsApp renders correctly 1`] = `
         "backgroundColor": "hsl(180, 50%, 50%)",
       }
     }
-  />
+  >
+    <div
+      className="color-info info-container"
+    >
+      <p
+        className="color-info color"
+      >
+        #40BFBF
+      </p>
+      <p
+        className="color-info info"
+      >
+        click to save
+      </p>
+    </div>
+  </div>
 </div>
 `;
