@@ -6,20 +6,25 @@ import ColorSelector from '../ColorSelector'
 class ColorsApp extends Component {
   constructor () {
     super ()
+    const hist = window.history.state || []
     this.state = {
       current: Color({h: 180, s: 50, l: 50}),
-      colors: []
+      colors: hist.map(Color)
     }
-    this.mouseMove = this.mouseMove.bind(this)
-    this.saveColor = this.saveColor.bind(this)
     this.currrentColorSelector = React.createRef()
+    window.scrollTo({
+      top: window.innerHeight/2
+    })
   }
 
   mouseMove (e) {
     let {current} = this.state
-    const {pageX, pageY} = e
+    const {clientX, clientY} = e
     const rect = this.currrentColorSelector.current.getBoundingClientRect()
-    const [x, y] = [pageX/rect.width, pageY/rect.height]
+    const [x, y] = [
+      clientX/rect.width,
+      clientY/rect.height
+    ]
     current = current
       .hue(Math.floor(360*x))
       .lightness(Math.floor(100*y))
@@ -29,7 +34,16 @@ class ColorsApp extends Component {
   saveColor () {
     const colors = this.state.colors.slice()
     colors.push(this.state.current)
+    window.history.pushState(
+      colors.map(c => c.hex()), document.title, colors.map(c => c.hex()).join()
+    )
     this.setState({...this.state, colors})
+  }
+  changeSaturation (e) {
+    let {current} = this.state
+    const z = (window.scrollY*2) / document.body.scrollHeight
+    current = current.saturationl(100*z)
+    this.setState({...this.state, current})
   }
   render () {
     const colors = this.state.colors
@@ -47,8 +61,9 @@ class ColorsApp extends Component {
           color={current}
           className='color-selector'
           reference={this.currrentColorSelector}
-          onMouseMove={this.mouseMove}
-          onClick={this.saveColor}
+          onMouseMove={e => this.mouseMove(e)}
+          onClick={e => this.saveColor(e)}
+          onWheel={e => this.changeSaturation(e)}
         />
       </div>
     )
