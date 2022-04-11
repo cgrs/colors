@@ -1,7 +1,7 @@
 import {html, css, LitElement} from 'lit'
 
 import './components/color-picker'
-import * as Color from 'color'
+import Color from 'color'
 
 export default class ColorsApp extends LitElement {
     static styles = css`
@@ -92,9 +92,9 @@ export default class ColorsApp extends LitElement {
         const state = window.history.state
         try {
             if (state && (Array.isArray(state) && state.length !== 0)) {
-                this.colors = state.map(c => Color(c.color))
+                this.colors = state.map(c => new Color(c.color))
             } else if (hash !== '') {
-                this.colors = hash.split(',').map(c => Color(c))
+                this.colors = hash.split(',').map(c => new Color(c))
                 window.history.pushState(this.colors, '', this.colors.map(c => c.hex()).join())
             } else {
                 this.colors = []
