@@ -1,0 +1,21 @@
+name: build and deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: build
+        uses: actions/setup-node@v2
+      - run: yarn install --frozen-lockfile
+      - run: yarn build --base=/colors/
+      - name: deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist

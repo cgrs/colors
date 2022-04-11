@@ -1,20 +1,20 @@
 # ```colors-app```
-[Colordot](https://color.hailpixel.com) by [hailpixel](https://github.com/devinhunt) ported to React.
+[Colordot](https://color.hailpixel.com) by [hailpixel](https://github.com/devinhunt) ported to ~~React~~ `lit`.
 
-This is still a work in progress, there are some functionalities pending:
+~~This is still a work in progress, there are some functionalities pending:~~
 - [x] Create a color swatch using the mouse position
-- [ ] Modify saturation with scroll wheel
-- [ ] Allow shareable links
-- [ ] Display colors in hexadecimal
+- [x] Modify saturation with scroll wheel
+- [x] Allow shareable links
+- [x] Display colors in hexadecimal
 
 ## Get started
 
-[Parcel.js](https://parceljs.org/) was used to build this app.
+~~[Parcel.js](https://parceljs.org/)~~[Vite](https://vitejs.dev/) was used to build this app.
 
 ```bash
 $ git clone https://github.com/cgrs/colors.git && cd colors
-$ npm install
-$ npm start
+$ yarn install
+$ yarn dev
 ```
 
 ## Contributing

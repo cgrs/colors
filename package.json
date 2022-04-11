@@ -1,35 +1,20 @@
 {
   "name": "colors",
-  "version": "0.1.0",
-  "description": "Colordot app ported to React",
-  "main": "index.js",
+  "version": "1.0.0",
+  "description": "Colordot app ported to lit",
+  "main": "index.html",
   "scripts": {
-    "start": "parcel src/index.html",
-    "build": "parcel build src/index.html --public-url .",
-    "watch": "parcel watch src/index.html",
-    "test": "jest"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "keywords": [],
   "author": "carlos gonzález <cgrs@cgrs.me>",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
-    "@babel/core": "^7.3.4",
-    "@babel/preset-env": "^7.3.4",
-    "@babel/preset-react": "^7.0.0",
-    "babel-jest": "^24.4.0",
-    "identity-obj-proxy": "^3.0.0",
-    "jest": "^24.4.0",
-    "parcel-bundler": "^1.11.0",
-    "react-test-renderer": "^16.8.4"
-  },
-  "jest": {
-    "moduleNameMapper": {
-      "\\.css$": "identity-obj-proxy"
-    }
+    "vite": "^2.9.1"
   },
   "dependencies": {
-    "color": "^3.1.0",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+    "color": "^4.2.3",
+    "lit": "^2.2.2"
   }
 }
